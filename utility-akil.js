@@ -30,3 +30,8 @@ function getRandomAlphabet(){
     // console.log(index,alphabet);
     return alphabet
 } 
+
+function setElementValue(elementId,value){
+    const element = document.getElementById(elementId)
+    element.innerText = value ;
+}
