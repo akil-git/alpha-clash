@@ -19,6 +19,9 @@ function play() {
 function handleKeyboardKeyUpEvent(event) {
     const playerPressed = event.key;
     console.log( 'player pressed', playerPressed)
+    if (playerPressed === 'Escape') {
+        gameover()
+    }
 
     // EXPECTED PRESS
 
@@ -66,6 +69,15 @@ function handleKeyboardKeyUpEvent(event) {
 function gameover(){
     hideElementById('play-ground')
     showElementById('score')
+    // update final score 
+    const lastScore = getTextElementValueById('rest-score')
+    
+
+    setElementValue('game-end-score',lastScore)
+
+    const currentAlphabet =  textElementById('current-alphabet')
+    RemoveBackgroundColor(currentAlphabet)
+   
     
 }
 
