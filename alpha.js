@@ -41,7 +41,7 @@ function handleKeyboardKeyUpEvent(event) {
 
     if (playerPressed == expectedAlphabet) {
         console.log("you have gained a point");
-        audio.src= "/audio/right.mp3";
+        audio.src= "https://akil-git.github.io/alpha-clash/audio/right.mp3";
         audio.play();
         continueGame()
         RemoveBackgroundColor(expectedAlphabet)
@@ -57,7 +57,7 @@ function handleKeyboardKeyUpEvent(event) {
     }
     else{
         console.log('you lose a life');
-        audio.src ="/audio/wrong2.mp3";
+        audio.src ="https://akil-git.github.io/alpha-clash/audio/wrong2.mp3";
         audio.play();
         const getTheCurrentLife = document.getElementById('current-score')
         const CurrentLife = getTheCurrentLife.innerText
