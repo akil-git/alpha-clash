@@ -8,6 +8,7 @@ function continueGame() {
 function play() {
     // clear the screen portion 
     // new portion 
+    isGameOn = true
     setElementValue('current-score',5)
     setElementValue('rest-score',0)
     hideElementById('home-screen');
@@ -16,8 +17,12 @@ function play() {
     continueGame();
 }
  const audio = new Audio()
+ let isGameOn = false;
 // for pressing individual key in the keyboard 
 function handleKeyboardKeyUpEvent(event) {
+    if (isGameOn == false)  return
+       
+    
     const playerPressed = event.key;
     console.log( 'player pressed', playerPressed)
     if (playerPressed === 'Escape') {
@@ -76,7 +81,7 @@ function gameover(){
     showElementById('score')
     // update final score 
     const lastScore = getTextElementValueById('rest-score')
-    
+    isGameOn = false
 
     setElementValue('game-end-score',lastScore)
 
