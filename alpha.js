@@ -15,6 +15,7 @@ function play() {
     showElementById('play-ground');
     continueGame();
 }
+ const audio = new Audio()
 // for pressing individual key in the keyboard 
 function handleKeyboardKeyUpEvent(event) {
     const playerPressed = event.key;
@@ -35,6 +36,8 @@ function handleKeyboardKeyUpEvent(event) {
 
     if (playerPressed == expectedAlphabet) {
         console.log("you have gained a point");
+        audio.src= "../audio/right.mp3";
+        audio.play();
         continueGame()
         RemoveBackgroundColor(expectedAlphabet)
 
@@ -49,6 +52,8 @@ function handleKeyboardKeyUpEvent(event) {
     }
     else{
         console.log('you lose a life');
+        audio.src ="../audio/wrong2.mp3";
+        audio.play();
         const getTheCurrentLife = document.getElementById('current-score')
         const CurrentLife = getTheCurrentLife.innerText
         const life = parseInt(CurrentLife)
